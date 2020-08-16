@@ -78,7 +78,8 @@ def solve(board, callback=print):
                     board.setNumber(row, col, guess)
                     solve(board, callback=callback)
                     board.setNumber(row, col, 0)
-                # if the code gets her, the board is unsolvable
+                # if the code gets here, the board is unsolvable
+                # or has been solved already on a different path
                 return
     # if the code gets here, the board is solved.
     callback(board)
