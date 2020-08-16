@@ -1,4 +1,4 @@
-#fizzbuzz.py
+#sudoku.py
 """
 Implementation of a Sudoku solver.
 @Author: AlexG.
@@ -67,10 +67,7 @@ class SudokuBoard:
         return board            
         
 def solve(board, callback=print):
-    """ Get all possible solutions for given SudokuBoard. 
-    Note: use board.copy() in callback if you want to return the board.
-    Otherwise it may get overwritten by the solver.
-    """
+    """ Get all possible solutions for given SudokuBoard. """
     for row, values in enumerate(board):
         for col, value in enumerate(values):
             if board.isEmpty(row, col):
@@ -82,7 +79,7 @@ def solve(board, callback=print):
                 # or has been solved already on a different path
                 return
     # if the code gets here, the board is solved.
-    callback(board)
+    callback(board.copy())
     return
     
 if __name__ == "__main__": 
@@ -101,7 +98,7 @@ if __name__ == "__main__":
         ))  
         
     solutions = []
-    solve(board, callback = lambda board : solutions.append(board.copy()))
+    solve(board, callback = lambda board : solutions.append(board))
     for solution in solutions:
         print(solution)
        

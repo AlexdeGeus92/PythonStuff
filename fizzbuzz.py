@@ -21,6 +21,6 @@ def fizzbuzz(n, **kwargs):
  
 if __name__ == "__main__": 
 
-    for result in fizzbuzz(1000000, fizz=3, buzz=5):
+    for result in fizzbuzz(50, fizz=3, buzz=5):
         print(result)
        
